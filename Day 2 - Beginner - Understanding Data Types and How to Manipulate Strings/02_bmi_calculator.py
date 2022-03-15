@@ -28,14 +28,4 @@ weight = input("enter your weight in kg: ")
 float_height = float(height)
 int_weight = int(weight)
 
-<<<<<<< HEAD
-print(int(int_weight / float_height ** 2))sfsfsfsfssdfsdfdsfsfsdfsdfsdfsfsfsfssfsfeedbtgetrgvbedtfgfvbetfgvb
-etfbaetfbaertberst
-bstrbdstrb
-rdtffbr
-dtfbrdt
-b
-=======
-print(int(int_weight / float_height ** 2))sfsfsfsfs
-zdsfvdfbv
->>>>>>> f515792a00f3825079ff5d040dd7d85406ca2092
+print(int(int_weight / float_height ** 2))
