@@ -1,3 +1,4 @@
+import art
 
 def add(n1, n2):
 	return n1 + n2
@@ -21,6 +22,7 @@ operations = {
 
 
 def calculator():
+	print(art.logo)
 	num1 = float(input('entew the fiwst numbew:\n'))
 	for operator in operations:
 		print(operator)

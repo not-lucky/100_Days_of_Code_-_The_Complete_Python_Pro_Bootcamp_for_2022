@@ -26,11 +26,11 @@ def draw_card():
 
 def blackjack(you, comp):
 	if sum(you) == 21 and sum(comp) == 21:
-		return 'You both hit a blackJAKC????!!!! WOW Its a draw though'
+		return 'd'
 	elif sum(you) == 21:
-		return 'You hit a blackjack!!! YOu win.'
+		return 'w'
 	elif sum(comp) == 21:
-		return 'comp balckkac. you lose.'
+		return 'l'
 
 def bust_or_continue(you):
 	if 11 not in you:
@@ -43,52 +43,58 @@ def bust_or_continue(you):
 			return True
 	return False
 
+def result_for_you(you, comp):
+	return f"Your cards: {you}, sum {sum(you)}\nComputer's cards: {comp}"
+
 def game():
 	print(you, 'and the sum  ', sum(you),'\n',comp)
 	if sum(you) > 21:
 		if bust_or_continue(you):
 			print('over 21dgdgdgd')
-			return
+			return 'l'
 		else:
 			you[you.index(11)] = 1
 
 	print(you, 'and the sum  ', sum(you),'\n',comp)
 	if sum(you) == 21 or sum(comp) == 21:
-		print(blackjack(you, comp))
-		return
-
-
+		return blackjack(you, comp)
 
 	more_cards_or_not = input("Type 'y' to get another card, type 'n' to pass: ")
 	if more_cards_or_not == 'y':
 		you.append(draw_card())
 		game()
-		return
+		
 	else:
 		while sum(comp) < 17:
 			comp.append(draw_card())
 
 		if sum(comp) > 21:
 			print('comp more than 21. u win', comp)
-			return
+			return 'w'
 		else:
 			if sum(you) == sum(comp):
 				print(you, comp)
 				print('draw')
-				return
+				return 'd'
 			elif sum(you) > sum(comp):
 				print(you, comp)
 				print('i win')
-				return
+				return 'w'
 			else:
 				print(you, comp)
 				print('comp win')
-				return
+				return 'l'
 
 while input('Wanna try a game of Blackjack? ') == 'y':
 	you = []
 	comp = []
-	for i in range(2):
+	for _ in range(2):
 		you.append(draw_card())
 		comp.append(draw_card())
-	game()
+	result_of_game = game()
+	if result_of_game == 'w':
+		print(f'{results}\nCongratulations!!! You won.')
+	elif result_of_game == 'l':
+		print(f'{results}\nAHHH!! gg though')
+	else:
+		print(f'{results}\nRIP draw')
