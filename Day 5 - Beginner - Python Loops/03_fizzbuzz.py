@@ -32,8 +32,7 @@ FizzBuzz
 .... etc.
 '''
 
-
-#Write your code below this row 👇
+# Write your code below this row 👇
 
 for i in range(1, 101):
     if i % 3 == 0 and i % 5 == 0:
@@ -44,4 +43,3 @@ for i in range(1, 101):
         print('Buzz')
     else:
         print(i)
-

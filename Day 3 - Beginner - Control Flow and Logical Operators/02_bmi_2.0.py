@@ -25,13 +25,12 @@ Example Output
 Your BMI is 28, you are slightly overweight.
 '''
 
-
 # 🚨 Don't change the code below 👇
 height = float(input("enter your height in m: "))
 weight = float(input("enter your weight in kg: "))
 # 🚨 Don't change the code above 👆
 
-#Write your code below this line 👇
+# Write your code below this line 👇
 
 bmi = round(weight / height ** 2)
 boiler_plate_statement = f'Your BMI is {bmi}, you are'

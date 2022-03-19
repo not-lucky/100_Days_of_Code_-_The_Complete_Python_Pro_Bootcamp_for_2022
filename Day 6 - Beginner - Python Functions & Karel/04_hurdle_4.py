@@ -3,6 +3,7 @@ def turn_right():
     turn_left()
     turn_left()
 
+
 def jump():
     turn_left()
     move()
@@ -15,7 +16,7 @@ def jump():
         move()
     turn_left()
 
-    
+
 while not at_goal():
     if not front_is_clear():
         jump()

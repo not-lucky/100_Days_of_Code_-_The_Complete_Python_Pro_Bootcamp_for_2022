@@ -23,12 +23,11 @@ Example Output
 You have 12410 days, 1768 weeks, and 408 months left.
 '''
 
-
 # 🚨 Don't change the code below 👇
 age = input("What is your current age?")
 # 🚨 Don't change the code above 👆
 
-#Write your code below this line 👇
+# Write your code below this line 👇
 
 years_till_90 = 90 - int(age)
 
