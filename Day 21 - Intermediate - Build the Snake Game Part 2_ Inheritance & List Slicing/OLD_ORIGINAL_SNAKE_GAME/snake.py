@@ -1,6 +1,6 @@
 from turtle import Turtle
 
-INITIAL_BLOCKS = 5
+INITIAL_BLOCKS = 15
 UP = 90
 DOWN = 270
 LEFT = 180
@@ -21,13 +21,6 @@ class Snake():
             new_block.goto(x, y)
             x -= 20
             self.blocks.append(new_block)
-
-    def reset_position(self):
-        for block in self.blocks:
-            block.goto(7777777, 7777777)
-        self.blocks.clear()
-        self.create_snake()
-        self.FIRST_BLOCK = self.blocks[0]
 
     def move(self):
         for block_number in range(len(self.blocks) - 1, 0, -1):

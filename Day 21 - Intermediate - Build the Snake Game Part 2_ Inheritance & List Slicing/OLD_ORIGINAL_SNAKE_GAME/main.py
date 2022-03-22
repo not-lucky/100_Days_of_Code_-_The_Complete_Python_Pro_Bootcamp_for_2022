@@ -4,6 +4,8 @@ from snake import Snake
 from food import Food
 from scoreboard import Scoreboard
 
+
+
 screen = Screen()
 screen.bgcolor('black')
 screen.setup(width=900, height=900)
@@ -32,20 +34,17 @@ def game():
             snake.grow_bigger()
             scoreboard.update_score()
 
-        if snake.FIRST_BLOCK.xcor() > 410 or snake.FIRST_BLOCK.xcor(
-        ) < -410 or snake.FIRST_BLOCK.ycor() > 410 or snake.FIRST_BLOCK.ycor(
-        ) < -410:
-            # scoreboard.game_over_screen()
-            snake.reset_position()
-            scoreboard.reset()
+        if snake.FIRST_BLOCK.xcor() > 410 or snake.FIRST_BLOCK.xcor() < -410  or snake.FIRST_BLOCK.ycor() > 410  or snake.FIRST_BLOCK.ycor() < -410:
+            scoreboard.game_over_screen()
+            break
 
         for block in snake.blocks[1:]:
             if snake.FIRST_BLOCK.distance(block) < 10:
-                # scoreboard.game_over_screen()
-                snake.reset_position()
-                scoreboard.reset()
+                scoreboard.game_over_screen()
+                return
 
 
 game()
+
 
 screen.exitonclick()
