@@ -2,7 +2,9 @@ import pandas as pd
 import smtplib
 import random
 import datetime as dt
+import os
 
+# print(os.environ.get('LUCKY_RTPOIQW_PASS'))
 data = pd.read_csv('birthdays.csv')
 print(data)
 
@@ -14,13 +16,10 @@ for (index, row) in data.iterrows():
     if row.month == current_month and row.day == current_date:
         connection = smtplib.SMTP('smtp.gmail.com')
         connection.starttls()
-        connection.login(
-            user='rtpoiqw',
-            password=
-            "'requests', 'clint', 'faker', 'selenium', 'colorama', 'undetected-chromedriver', 'selenium-wire'"
-        )
+        connection.login(user='rtpoiqw',
+                         password=os.environ.get('LUCKY_RTPOIQW_PASS'))
 
-        select_letter = f'letter_templates/letter_{random.randint(1, 3)}.txt' 
+        select_letter = f'letter_templates/letter_{random.randint(1, 3)}.txt'
         print(select_letter)
         with open(select_letter) as letter:
             raw_letter_content = letter.read()

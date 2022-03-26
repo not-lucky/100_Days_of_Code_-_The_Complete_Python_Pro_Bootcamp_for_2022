@@ -1,10 +1,11 @@
 from time import sleep
 import requests
+import os
 from datetime import datetime
 import smtplib
 
-MY_LAT = 30.225788  # Your latitude
-MY_LONG = 78.821855  # Your longitude
+MY_LAT = os.environ.get('LUCKY_LAT')  # Your latitude
+MY_LONG = os.environ.get('LUCKY_LONG')  # Your longitude
 
 
 def iss_pos():
@@ -55,12 +56,10 @@ while True:
             connection.starttls()
             connection.login(
                 user='rtpoiuqw',
-                password=
-                "'requests', 'clint', 'faker', 'selenium', 'colorama', 'undetected-chromedriver', 'selenium-wire'"
-            )
+                password=os.environ.get('LUCKY_RTPOIQW_PASS'))
             connection.sendmail(
                 from_addr='rtpoiqw@gmail.com',
-                to_addrs='ayushrawat801@gmail.com',
+                to_addrs='urmom@gmail.com',
                 msg='Subject:ISS\n\nLook above! ISS is here!!!!')
             connection.close()
 
